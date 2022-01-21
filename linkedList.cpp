@@ -11,7 +11,7 @@ using namespace std;
 
 
 void solve(void){
-    
+	cout << "hello work !!";    
 }
 
 int main(void){
