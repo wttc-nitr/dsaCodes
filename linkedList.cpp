@@ -13,6 +13,7 @@ using namespace std;
 void solve(void){
 	cout << "hello work !!";    
 	/*kghsklghsj*/
+	cout << "woahhh!";
 }
 
 int main(void){
