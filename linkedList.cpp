@@ -14,6 +14,7 @@ void solve(void){
 	cout << "hello work !!";    
 	/*kghsklghsj*/
 	cout << "woahhh!";
+    cout << "nice nice";
 }
 
 int main(void){
