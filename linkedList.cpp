@@ -12,6 +12,7 @@ using namespace std;
 
 void solve(void){
 	cout << "hello work !!";    
+	/*kghsklghsj*/
 }
 
 int main(void){
