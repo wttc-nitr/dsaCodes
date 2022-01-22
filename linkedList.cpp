@@ -11,10 +11,9 @@ using namespace std;
 
 
 void solve(void){
-	cout << "hello work !!";    
-	/*kghsklghsj*/
-	cout << "woahhh!";
-    cout << "nice nice";
+    int i=0;
+    while (i++ < 10)
+        cout << i << '\n';
 }
 
 int main(void){
