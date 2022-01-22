@@ -11,9 +11,7 @@ using namespace std;
 
 
 void solve(void){
-    int i=0;
-    while (i++ < 10)
-        cout << i << '\n';
+    
 }
 
 int main(void){
