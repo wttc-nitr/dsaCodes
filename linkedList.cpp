@@ -8,22 +8,41 @@ using namespace std;
 #define Ft first
 #define Sd second
 
+class Node {
+public:
+    int data;
+    Node *next;
+};
 
-
-void solve(void){
-    
+void printList(Node *head){
+    while (head) {
+        cout << head->data << ' ';
+        head = head->next;
+    }
 }
 
 int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
-    int test_cases = 1; 
-    while (test_cases-- > 0) {
-   	 solve();
-    }
+    Node *head = NULL;
+    Node *second = NULL;
+    Node *third = NULL;
 
-#ifndef ONLINE_JUDGE
-    cerr << "\nTime elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
-#endif
+    head = new Node();
+    second = new Node();
+    third = new Node();
+
+    head->data = 1;
+    head->next = second;
+
+    second->data = 2;
+    second->next = third;
+
+    third->data = 3;
+    third->next = NULL; 
+
+    printList(head);   
+
+
     return 0;
 }
