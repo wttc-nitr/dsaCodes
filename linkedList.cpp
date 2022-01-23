@@ -33,7 +33,7 @@ void printList_dotOperator(Node *head){
 }
 
 // delete first node via returning new head 
-Node *delete_first(Node *Head){
+Node *deleteFirst_ReturnHead(Node *Head){
     if (Head == NULL)
         return Head;
 
@@ -67,7 +67,7 @@ int main(void){
     third->next = NULL; 
 
     printList(head);
-    head = delete_first(head);
+    head = deleteFirst_ReturnHead(head);
     printList(head);   
 
 
