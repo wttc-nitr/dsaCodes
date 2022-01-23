@@ -21,6 +21,13 @@ void printList(Node *head){
     }
 }
 
+void printList_dotOperator(Node *head){
+    while (head){
+        cout << (*head).data << ' ';
+        head = (*head).next;
+    }
+}
+
 int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
@@ -41,7 +48,7 @@ int main(void){
     third->data = 3;
     third->next = NULL; 
 
-    printList(head);   
+    printList_dotOperator(head);   
 
 
     return 0;
