@@ -1,0 +1,8 @@
+&head  ---- address of head pointer
+head   ---- address of Node
+*head  ---- we are at Node. Can use dot operator, like (*head).data or (*head).next
+
+
+head_ref    =  &head
+*head_ref   =  head
+**head_ref  =  *head  =  at Node
