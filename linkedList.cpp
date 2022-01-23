@@ -1,12 +1,5 @@
-/*
-#pragma GCC optimize("Ofast")
-#pragma GCC target("avx,avx2,fma")
-*/
 #include "bits/stdc++.h"
 using namespace std;
-#define ll long long
-#define Ft first
-#define Sd second
 
 class Node {
 public:
@@ -34,6 +27,7 @@ void printList_dotOperator(Node *head){
 
 // delete first node via returning new head 
 Node *deleteFirst_ReturnHead(Node *Head){
+    // if list is empty
     if (Head == NULL)
         return Head;
 
@@ -44,6 +38,19 @@ Node *deleteFirst_ReturnHead(Node *Head){
     free(temp);
 
     return Head;
+}
+
+// if you want to modify the local variable of one function inside another function, pass a pointer to that variable
+// So, we are changing the value of head here.
+void deleteFirst(Node **head_ref){
+    if (*head_ref == NULL)
+        return;
+
+    Node *temp = *head_ref;
+
+    *head_ref = (*head_ref)->next;
+
+    free(temp);
 }
 
 int main(void){
@@ -67,7 +74,7 @@ int main(void){
     third->next = NULL; 
 
     printList(head);
-    head = deleteFirst_ReturnHead(head);
+    deleteFirst(&head);
     printList(head);   
 
 

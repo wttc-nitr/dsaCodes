@@ -6,3 +6,8 @@ head   ---- address of Node
 head_ref    =  &head
 *head_ref   =  head
 **head_ref  =  *head  =  at Node
+-----------------------------------------
+
+Logic of deleteFirst -> if you want to modify the local variable of one function inside another function, pass a pointer 
+						to that variable
+
