@@ -15,10 +15,14 @@ public:
 };
 
 void printList(Node *head){
+    cout << "the list is: \n";
+
     while (head) {
         cout << head->data << ' ';
         head = head->next;
     }
+
+    cout << "\n\n";
 }
 
 void printList_dotOperator(Node *head){
@@ -26,6 +30,20 @@ void printList_dotOperator(Node *head){
         cout << (*head).data << ' ';
         head = (*head).next;
     }
+}
+
+// delete first node via returning new head 
+Node *delete_first(Node *Head){
+    if (Head == NULL)
+        return Head;
+
+    Node *temp = Head;
+
+    Head = Head->next;
+
+    free(temp);
+
+    return Head;
 }
 
 int main(void){
@@ -48,7 +66,9 @@ int main(void){
     third->data = 3;
     third->next = NULL; 
 
-    printList_dotOperator(head);   
+    printList(head);
+    head = delete_first(head);
+    printList(head);   
 
 
     return 0;
