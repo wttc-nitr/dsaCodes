@@ -53,6 +53,45 @@ void deleteFirst(Node **head_ref){
     free(temp);
 }
 
+// insert at beginning
+void push(Node **head_ref, int data){
+    Node *new_node = new Node();
+
+    new_node->data = data;
+
+    new_node->next = *head_ref;
+
+    *head_ref = new_node;
+}
+
+// insert after a given node
+void insertAfter(Node *prev, int data){
+    if (prev == NULL){
+        cout << "previous node can't be null.\n"; return;
+    }
+
+    Node *new_node = new Node();
+    
+    new_node->data = data;
+
+    new_node->next = prev->next;
+
+    prev->next = new_node;
+}
+
+void append(Node *head, int data){
+    while (head->next){
+        head = head->next;
+    }
+
+    Node *new_node = new Node();
+    new_node->data = data;
+
+    new_node->next = NULL;
+
+    head->next = new_node;
+}
+
 int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
@@ -74,9 +113,10 @@ int main(void){
     third->next = NULL; 
 
     printList(head);
-    deleteFirst(&head);
-    printList(head);   
+       
+    append(head, 9);
 
+    printList(head);
 
     return 0;
 }
