@@ -1,3 +1,5 @@
+** if a solution uses recursion, it can NEVER be Constant Space solution.
+
 merge sort is stable sort, means the order of two numbers (with equal values) remains same.
 this is due to => in merge function ->  if (arr[itr1] <= arr[itr2]) -> changing "<=" to "<" makes it Unstable.
 
