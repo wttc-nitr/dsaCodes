@@ -1,4 +1,8 @@
-** if a solution uses recursion, it can NEVER be Constant Space solution.
+** if a solution uses recursion, it can NEVER be Constant Space solution. Stack space is needed for recursion.
+and, Stack space is determined by DEPTH of Tree. For (Recursive) merge sort , stack space in O(log N); 
+Also, for merging O(N) space is required.
+
+so, space complexity of merge sort is O(N + log N) => O(N);
 
 merge sort is stable sort, means the order of two numbers (with equal values) remains same.
 this is due to => in merge function ->  if (arr[itr1] <= arr[itr2]) -> changing "<=" to "<" makes it Unstable.
