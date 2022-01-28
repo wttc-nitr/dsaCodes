@@ -1,0 +1,4 @@
+merge sort is stable sort, means the order of two numbers (with equal values) remains same.
+this is due to => in merge function ->  if (arr[itr1] <= arr[itr2]) -> changing "<=" to "<" makes it Unstable.
+
+similarly, in insertion sort, its stability can be removed during insertion, by checking if the previous value is greater than or "equal" to the current value
