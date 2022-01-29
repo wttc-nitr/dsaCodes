@@ -80,7 +80,7 @@ void insertAfter(Node *prev, int data){
 }
 
 void append(Node *head, int data){
-    while (head->next){
+    while (head->next){  // not "while (head)"
         head = head->next;
     }
 
@@ -90,6 +90,19 @@ void append(Node *head, int data){
     new_node->next = NULL;
 
     head->next = new_node;
+}
+
+Node *Reverse(Node *head){
+    Node *prev = NULL, *curr = head, *frwd = NULL;
+    
+    while (curr){
+        frwd = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = frwd;
+    }
+    
+    return prev;
 }
 
 int main(void){
@@ -113,10 +126,8 @@ int main(void){
     third->next = NULL; 
 
     printList(head);
-       
-    append(head, 9);
-
-    printList(head);
+    
+    printList(Reverse(head));
 
     return 0;
 }
