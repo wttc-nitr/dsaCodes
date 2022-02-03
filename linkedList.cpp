@@ -105,29 +105,49 @@ Node *Reverse(Node *head){
     return prev;
 }
 
+void initList(Node **head_ref, int n){
+    int k; cout << "enter num :\n" << endl;
+    cin >> k;
+
+    push(head_ref, k);
+
+    while (--n > 0){
+        cout << "enter num :\n" << endl;
+        cin >> k;
+
+        append(*head_ref, k);
+    }
+}
+
 int main(void){
-     ios::sync_with_stdio(0); cin.tie(0);
+     ios::sync_with_stdio(0); //cin.tie(0);
      
-    Node *head = NULL;
-    Node *second = NULL;
-    Node *third = NULL;
+    // Node *head = NULL;
+    // Node *second = NULL;
+    // Node *third = NULL;
 
-    head = new Node();
-    second = new Node();
-    third = new Node();
+    // head = new Node();
+    // second = new Node();
+    // third = new Node();
 
-    head->data = 1;
-    head->next = second;
+    // head->data = 1;
+    // head->next = second;
 
-    second->data = 2;
-    second->next = third;
+    // second->data = 2;
+    // second->next = third;
 
-    third->data = 3;
-    third->next = NULL; 
+    // third->data = 3;
+    // third->next = NULL; 
 
-    printList(head);
+    // printList(head);
     
-    printList(Reverse(head));
+    // printList(Reverse(head));
+
+    Node *list = NULL;
+
+    initList(&list, 5);
+
+    printList(list);
 
     return 0;
 }
