@@ -119,6 +119,52 @@ void initList(Node **head_ref, int n){
     }
 }
 
+Node *merge(Node* A, Node *B){
+    // if one list is empty, return the other
+    if (A == NULL)
+        return B;
+    
+    if (B == NULL)
+        return A;
+        
+    Node *i = A, *j = B; 
+    Node *head = NULL;
+    
+    // deciding the first node in the merged list
+    if (i->data <= j->data){
+        head = i;
+        i = i->next;
+    }
+    else {
+        head = j;
+        j = j->next;
+    }
+
+    // merging operation, just changing the Next of one node to point to one of the two available nodes
+    while (i && j){
+        if (i->data <= j->data){
+            head->next = i;
+            i = i->next;
+        }
+        else {
+            head->next = j;
+            j = j->next;
+        }
+
+        head = head->next;
+    }
+
+    // merge the unfinished list
+    if (i)
+        head->next = i;
+
+    if (j)
+        head->next = j;
+
+    return A->data <= B->data ? A : B;
+
+}
+
 int main(void){
      ios::sync_with_stdio(0); //cin.tie(0);
      
