@@ -29,14 +29,9 @@ bool isEmpty(void){
 void Push(int x){
     Node *new_node = (Node*)malloc(sizeof(int));
     new_node->val = x;
-    new_node->next = NULL;
+    new_node->next = head;
 
-    if (isEmpty())
-        head = new_node;
-    else {
-        new_node->next = head;
-        head = new_node;
-    }
+    head = new_node;
 }
 
 void Pop(void){
@@ -63,9 +58,12 @@ int main(void){
 
     printList(head);
 
-    Pop();
+    for (int cnt = 1; cnt <= 5; cnt++) {
+        printf("top element is %d.\n", Top());
+        Pop();
+    }
 
-    printf("%d\n", Top());
+    printf("top element is %d\n", Top());
 
     return 0;
 }
