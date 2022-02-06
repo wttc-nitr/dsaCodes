@@ -30,7 +30,6 @@ void Push(int x){
     Node *new_node = (Node*)malloc(sizeof(int));
     new_node->val = x;
     new_node->next = head;
-
     head = new_node;
 }
 
