@@ -25,7 +25,7 @@ int Back(void){
 void Push(int x){
     // check if queue is full
     if ((lId+1) % mx == fId){
-        cout << "queue is full. Sorry Senpai !\n";
+        cout << "\nqueue is full. Sorry Senpai !\n";
         return;
     }
 
@@ -39,7 +39,7 @@ void Push(int x){
 
 void Pop(void){
     if (isEmpty()){
-        cout << "queue is already empty Senpai !\n";
+        cout << "Can't Pop, queue is already empty Senpai !!\n";
         return;
     }
 
@@ -49,8 +49,48 @@ void Pop(void){
         fId = (fId+1) % mx;
 }
 
-int main(void){
-    for (int i=1; i <= 10; i++)
-        Push(x);
+void Display(void){
+    if (isEmpty()){
+        cout << "\nqueue is empty.\n"; return;
+    }
 
+    cout << "queue : \n";
+    if (fId > lId){
+        for (int i=fId; i < mx; i++)
+            cout << arr[i] << ' ';
+        for (int i=0; i <= lId; i++)
+            cout << arr[i] << ' ';
+    }
+    else {
+        for (int i=fId; i <= lId; i++)
+            cout << arr[i] << ' ';
+    }
+
+    cout << '\n';
+}
+
+int main(void){
+    for (int i=1; i <= mx; i++)
+        Push(i);
+
+    cout << "size of queue is " << Size() << '\n';
+
+    Display();
+
+    for (int cnt = 1; cnt <= mx/2; cnt++)
+        Pop();
+    Display();
+
+    for (int i=11; i <= 16; i++)
+        Push(i);
+    Display();
+
+    cout << Front() << ' ' << Back() << '\n';
+
+    //Pop();
+
+
+    cout << fId << ' ' << lId << '\n';
+
+    return 0;
 }
