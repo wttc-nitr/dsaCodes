@@ -47,7 +47,7 @@ void Insert_recusively(vector<int> &arr, int x) {
 }
 
 int fact(int n) {
-	if (n == 1) {
+	if (n == 1) { 
 		return 1;
 	}
 	return fact(n-1) * n;
@@ -57,7 +57,7 @@ int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
     vector<int> v{1, 2, 3, 4};
-    Insert_recusively(v, 0);
+    Insert_recusively(v, 9);
 
     for (auto i : v)
     	cout << i << ' ';
@@ -67,3 +67,4 @@ int main(void){
 #endif
     return 0;
 }
+
