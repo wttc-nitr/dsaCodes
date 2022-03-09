@@ -1,3 +1,24 @@
 backtracking uses DFS, while Branch n Bound uses BFS
 
 choices + decision
+
+3 ways to solve recursion problem : 
+(a) draw recursive tree , using Input-Output method -> when decision making is clear
+(b) induction-base-hypothesis -> make the Input smaller,  when decision making is not clear 
+(c) choice diagram
+
+Problems which are really recursive can be solved using recursive-tree (Input-Output) method,
+problems which are made to solve using recursion, can be solved using IBH method.
+
+first hypothesis, then induction and at last base condition.
+designing hypothesis means thinking what should ur function do at one input and what it should do at (just) smaller input.
+	e.g print 1 to n 
+						p(n)    => 1, 2, 3, ....n
+					or, p(n-1)	=> 1, 2, 3, ....n-1   and n
+
+					for base : p(3) => p(2) and 3
+							   p(2) => p(1) and 2
+							   p(1) => 1
+
+
+
