@@ -10,8 +10,11 @@ choices + decision
 Problems which are really recursive can be solved using recursive-tree (Input-Output) method,
 problems which are made to solve using recursion, can be solved using IBH method.
 
-first hypothesis, then induction and at last base condition.
-designing hypothesis means thinking what should ur function do at one input and what it should do at (just) smaller input.
+{ first hypothesis, then induction and at last base condition. }
+
+designing hypothesis means what should your function do,
+induction means thinking what/how should ur function do at one input and what it should do at (just) smaller input.
+base is smallest valid input
 	e.g print 1 to n 
 						p(n)    => 1, 2, 3, ....n
 					or, p(n-1)	=> 1, 2, 3, ....n-1   and n
