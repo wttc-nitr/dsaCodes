@@ -14,6 +14,7 @@ problems which are made to solve using recursion, can be solved using IBH method
 
 designing hypothesis means what should your function do,
 induction means thinking what/how should ur function do at one input and what it should do at (just) smaller input.
+{ for hypothesis-induction u need only two steps , don't need to sketch more than 2 steps }
 base is smallest valid input
 	e.g print 1 to n 
 						p(n)    => 1, 2, 3, ....n

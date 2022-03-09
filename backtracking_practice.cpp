@@ -15,7 +15,7 @@ void Print(int n) {
     cout << n << ' '; 
 }
 
-vector<int> insert_recusively(vector<int>&arr, int x) {
+vector<int> insert_recusively(vector<int> arr, int x) {
 	if (arr.empty() || arr.back() <= x) {
 		arr.push_back(x);
 		return arr;
@@ -30,6 +30,22 @@ vector<int> insert_recusively(vector<int>&arr, int x) {
 	// }
 }
 
+// same as above but without returning anything
+void Insert_recusively(vector<int> &arr, int x) {
+	if (arr.empty() || arr.back() <= x) {
+		arr.push_back(x);
+		return;
+	}
+
+	// if (!arr.empty() && arr.back() > x) {
+		int last = arr.back();
+		arr.pop_back();
+		Insert_recusively(arr, x);			// i should be in upper-case
+		arr.push_back(last);
+		
+	// }
+}
+
 int fact(int n) {
 	if (n == 1) {
 		return 1;
@@ -41,9 +57,9 @@ int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
     vector<int> v{1, 2, 3, 4};
-    auto k = insert_recusively(v, 0);
+    Insert_recusively(v, 0);
 
-    for (auto i : k)
+    for (auto i : v)
     	cout << i << ' ';
 
 #ifndef ONLINE_JUDGE
