@@ -46,6 +46,16 @@ void Insert_recusively(vector<int> &arr, int x) {
 	// }
 }
 
+void sortRecursively(vector<int> &arr) {
+	if (arr.size() <= 1)
+		return;
+
+	int last = arr.back();
+	arr.pop_back();
+	sortRecursively(arr);
+	Insert_recusively(arr, last);
+}
+
 int fact(int n) {
 	if (n == 1) { 
 		return 1;
@@ -53,13 +63,14 @@ int fact(int n) {
 	return fact(n-1) * n;
 }
 
+
 int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
-    vector<int> v{1, 2, 3, 4};
-    Insert_recusively(v, 9);
+    vector<int> arr{4, 3, 2, 1, 0, -9};
+    sortRecursively(arr);
 
-    for (auto i : v)
+    for (auto i : arr)
     	cout << i << ' ';
 
 #ifndef ONLINE_JUDGE
