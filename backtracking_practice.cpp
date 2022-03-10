@@ -63,15 +63,61 @@ int fact(int n) {
 	return fact(n-1) * n;
 }
 
+void insertInStack(stack<int> &stk, int x) {
+	if (stk.empty() || stk.top() <= x) {
+		stk.push(x);
+		return;
+	}
+
+	// if (stk.top() > x) {
+		int last = stk.top();
+		stk.pop();
+		insertInStack(stk, x);
+		stk.push(last);
+	// }
+}
+
+void sortStack(stack<int> &stk) {
+	if (stk.size() <= 1) {	// single element is already sorted
+		return;
+	}
+
+	int last = stk.top();
+	stk.pop();
+	sortStack(stk);
+	insertInStack(stk, last);
+}
+
+void printStack(stack<int> stk) {
+	vector<int> arr;
+
+	while (!stk.empty()) {
+		arr.push_back(stk.top());
+		stk.pop();
+	}
+
+	reverse(arr.begin(), arr.end());
+
+	cout << '\n';
+	for (auto i : arr)
+		cout << i << ' ';
+}
 
 int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
-    vector<int> arr{4, 3, 2, 1, 0, -9};
-    sortRecursively(arr);
+    stack<int> naya;
+    for (int i=100; i >= 1; i--)
+    	naya.push(i);
 
-    for (auto i : arr)
-    	cout << i << ' ';
+    // for (int i=11; i <= 15; i++)
+    // 	naya.push(i);
+
+    printStack(naya);
+
+    sortStack(naya);
+
+    printStack(naya);
 
 #ifndef ONLINE_JUDGE
     cerr << "\nTime elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
