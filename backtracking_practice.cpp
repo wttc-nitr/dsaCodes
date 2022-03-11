@@ -88,6 +88,48 @@ void sortStack(stack<int> &stk) {
 	insertInStack(stk, last);
 }
 
+void delete_KthElement(stack<int> &stk, int k) {
+	// if (stk.size() < k || k == 0)
+	// 	return;
+
+	if (k == 0) {
+		stk.pop();
+		return;
+	}
+
+	// if (k != 0) {
+		int last = stk.top();
+		stk.pop();
+		delete_KthElement(stk, k-1);
+		stk.push(last);
+	// }
+}
+
+void bottomInsert(stack<int> &stk, int x) {
+	if (stk.empty()) {
+		stk.push(x);
+		return;
+	}
+
+	// if (!stk.empty()) {
+		int last = stk.top();
+		stk.pop();
+		bottomInsert(stk, x);
+		stk.push(last);
+	// }
+}
+
+void reverseStack(stack<int> &stk) {
+	if (stk.size() <= 1) {  // 1 sized stack is already reversed in itself
+		return;
+	}
+
+	int last = stk.top();
+	stk.pop();
+	reverseStack(stk);
+	bottomInsert(stk, last);
+}
+
 void printStack(stack<int> stk) {
 	vector<int> arr;
 
@@ -107,17 +149,15 @@ int main(void){
      ios::sync_with_stdio(0); cin.tie(0);
      
     stack<int> naya;
-    for (int i=100; i >= 1; i--)
+    for (int i=10; i >= 1; i--)
     	naya.push(i);
 
-    // for (int i=11; i <= 15; i++)
-    // 	naya.push(i);
-
     printStack(naya);
 
-    sortStack(naya);
+    reverseStack(naya);
 
     printStack(naya);
+    
 
 #ifndef ONLINE_JUDGE
     cerr << "\nTime elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
