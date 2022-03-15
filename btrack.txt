@@ -25,6 +25,6 @@ base is smallest valid input
 							   p(1) => 1
 
 
-----------------------------------------first code sort using recursion then, Start from lecture 7 ---------------------------------
+----------------------------------------start from 8th, 14:29 ---------------------------------
 
 
