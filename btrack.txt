@@ -25,6 +25,14 @@ base is smallest valid input
 							   p(1) => 1
 
 
-----------------------------------------start from 8th, 14:29 ---------------------------------
+Tower of Hanoi time complexity : https://youtu.be/kJeaLssB16A 		-> 2^n
+			T(n) = 2 * T(n-1) + 1
+			T(n) = 2 * (2 * T(n-2) + 1) + 1 = 2^2 * T(n-2) + 2 + 1
+
+
+each sub-sequence is a subset
+
+
+------------------ Start from lecture 14, Permutation with Spaces -----------------
 
 
