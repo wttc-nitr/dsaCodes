@@ -33,6 +33,8 @@ Tower of Hanoi time complexity : https://youtu.be/kJeaLssB16A 		-> 2^n
 each sub-sequence is a subset
 
 
------------------- Start from lecture 14, Permutation with Spaces -----------------
+------------------ -----------------
+aage ke questions me decision tree bnate samay thoda sa dimag lagan padega;
+c = c ^ ' '    -> changes case of the letter ( upper case to lower case and vice versa);
 
 
