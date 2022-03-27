@@ -35,6 +35,6 @@ each sub-sequence is a subset
 
 ------------------ -----------------
 aage ke questions me decision tree bnate samay thoda sa dimag lagan padega;
-c = c ^ ' '    -> changes case of the letter ( upper case to lower case and vice versa);
+
 
 
