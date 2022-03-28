@@ -10,7 +10,9 @@ choices + decision
 Problems which are really recursive can be solved using recursive-tree (Input-Output) method,
 problems which are made to solve using recursion, can be solved using IBH method.
 
-{ first hypothesis, then induction and at last base condition. }
+{ first hypothesis, then induction and at last base condition. } 
+
+while coding, first type hypothesis and induction, then at last type the base condition. Isse jyada samajh aayega
 
 designing hypothesis means what should your function do,
 induction means thinking what/how should ur function do at one input and what it should do at (just) smaller input.
@@ -38,8 +40,10 @@ aage ke questions me decision tree bnate samay thoda sa dimag lagan padega;
 c = c ^ ' '    -> changes case of the letter ( upper case to lower case and vice versa);
 
 two ways to prune the 'generate Balanced parenthesis' :
- (1) we can use 'number of open brackets' and 'number of closed brackets' as a parameter and when either of the two
- 	is exhausted, then break the recursion.
+ (1) we can use 'number of open brackets' and 'number of closed brackets' as a parameter and when former is greater 
+ 	than the latter, then break the recursion.
 
  (2) if the starting bracket is a opening bracket ')' , then it can never be a valid answer.
+
+ 
 
